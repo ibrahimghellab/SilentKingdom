@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwd41nyjgccq"]
+
+[ext_resource type="PackedScene" uid="uid://by557diqlwbor" path="res://ennemy/ennemy.tscn" id="1_jccak"]
+[ext_resource type="PackedScene" uid="uid://bfaxvpbkfqtgr" path="res://Player/player.tscn" id="2_gmq62"]
+[ext_resource type="PackedScene" uid="uid://dnnbhb36s8a21" path="res://UI/player_ui.tscn" id="3_r8ksn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ennemy" parent="." instance=ExtResource("1_jccak")]
+position = Vector2(371, 240)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_gmq62")]
+position = Vector2(484, 253)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_r8ksn")]

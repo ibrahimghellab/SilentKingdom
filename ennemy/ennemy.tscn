@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://by557diqlwbor"]
+
+[ext_resource type="Script" path="res://ennemy/script/ennemy1.gd" id="1_mcvgf"]
+[ext_resource type="Texture2D" uid="uid://bgtiuxo6ca25x" path="res://icon.svg" id="2_mht21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_naaux"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p422f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mht21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luxkx"]
+size = Vector2(16, 16)
+
+[node name="Ennemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_mcvgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_naaux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-2.98023e-07, 1.3411e-06)
+scale = Vector2(0.15625, 0.15625)
+sprite_frames = SubResource("SpriteFrames_p422f")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_luxkx")
+debug_color = Color(0.987429, 0.0918765, 0.146337, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfaxvpbkfqtgr"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_nmtkm"]
+[ext_resource type="Script" path="res://State/State_machine.gd" id="2_et52c"]
+[ext_resource type="Script" path="res://State/IdleState.gd" id="3_odf7s"]
+[ext_resource type="Script" path="res://State/RunState.gd" id="4_k0vsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrm8w"]
+
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_nmtkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rrm8w")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_et52c")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("3_odf7s")
+player = NodePath("../..")
+
+[node name="Run" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_k0vsq")
+player = NodePath("../..")
+
+[node name="projectileHelper" type="Node2D" parent="."]
+
+[node name="projectileSpawn" type="Marker2D" parent="projectileHelper"]
+position = Vector2(18.5, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
