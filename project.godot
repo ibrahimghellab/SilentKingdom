@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://Script/global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -30,12 +34,14 @@ folder_colors={
 "res://Player/": "red",
 "res://UI/": "purple",
 "res://bullet/": "yellow",
+"res://competence/": "pink",
 "res://ennemy/": "green"
 }
 
 [global_group]
 
 bullet=""
+xp=""
 
 [input]
 

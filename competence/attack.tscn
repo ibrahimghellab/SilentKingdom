@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dppslihu6opad"]
+
+[ext_resource type="Script" path="res://competence/script/attack.gd" id="1_t4srp"]
+
+[node name="Attack" type="Node"]
+script = ExtResource("1_t4srp")
+nom = "Attaque +"
+desc = "l'attaque du joueur est multiplier par 2"

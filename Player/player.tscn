@@ -1,12 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfaxvpbkfqtgr"]
+[gd_scene load_steps=12 format=3 uid="uid://bfaxvpbkfqtgr"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nmtkm"]
 [ext_resource type="Script" path="res://State/State_machine.gd" id="2_et52c"]
 [ext_resource type="Script" path="res://State/IdleState.gd" id="3_odf7s"]
 [ext_resource type="Script" path="res://State/RunState.gd" id="4_k0vsq"]
 [ext_resource type="Script" path="res://Player/camera.gd" id="5_cq3kn"]
+[ext_resource type="Script" path="res://competence/script/competence_helper.gd" id="6_0434r"]
+[ext_resource type="PackedScene" uid="uid://dppslihu6opad" path="res://competence/attack.tscn" id="7_goybx"]
+[ext_resource type="PackedScene" uid="uid://b47redw2pwxb5" path="res://competence/health_plus.tscn" id="8_ctvq5"]
+[ext_resource type="PackedScene" uid="uid://doyvg8jpen5k2" path="res://competence/heal.tscn" id="9_112gy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrm8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xe64t"]
+radius = 26.5754
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -42,9 +49,28 @@ player = NodePath("../..")
 position = Vector2(18.5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -1000
-limit_top = -100
+limit_left = 0
+limit_top = 0
 limit_right = 2175
 limit_bottom = 1425
 position_smoothing_enabled = true
 script = ExtResource("5_cq3kn")
+
+[node name="xp_atract" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="xp_atract"]
+shape = SubResource("CircleShape2D_xe64t")
+debug_color = Color(0.953543, 0.207276, 0.163702, 0.42)
+
+[node name="competenceHelper" type="Node" parent="."]
+script = ExtResource("6_0434r")
+
+[node name="Attack" parent="competenceHelper" instance=ExtResource("7_goybx")]
+
+[node name="healthPlus" parent="competenceHelper" instance=ExtResource("8_ctvq5")]
+
+[node name="heal" parent="competenceHelper" instance=ExtResource("9_112gy")]
+
+[connection signal="area_entered" from="xp_atract" to="." method="_on_area_2d_area_entered"]
