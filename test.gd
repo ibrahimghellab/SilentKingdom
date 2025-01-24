@@ -1,17 +1,8 @@
 extends Node2D
 
-var is_menulvl = false
-@onready var menu_lvl : Control = $CanvasLayer/MenuLVL
 
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("space"):
-		menuLVL()
-	
-func menuLVL():
-	if !menu_lvl.visible:
-		menu_lvl.show()
-		Engine.time_scale = 0
-	else:
-		menu_lvl.hide()
-		Engine.time_scale = 1
+func remove_all_enemies():
+	print("ok")
+	for child in get_children():
+		if child is Ennemy:
+			child.queue_free()  

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkwd41nyjgccq"]
+[gd_scene load_steps=8 format=3 uid="uid://bkwd41nyjgccq"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_dqjly"]
 [ext_resource type="PackedScene" uid="uid://by557diqlwbor" path="res://ennemy/ennemy.tscn" id="1_jccak"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://qrtpjftb5isp" path="res://ennemy/spaw.tscn" id="4_yvw2e"]
 [ext_resource type="PackedScene" uid="uid://uujb0uspboeu" path="res://ennemy/map.tscn" id="5_2wuky"]
 [ext_resource type="PackedScene" uid="uid://dwi8k02uusqgo" path="res://xp.tscn" id="6_djn4f"]
-[ext_resource type="PackedScene" uid="uid://cb8eeiiy6kn24" path="res://menu_lvl.tscn" id="8_wrnc0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dqjly")
@@ -22,9 +21,6 @@ position = Vector2(371, 240)
 position = Vector2(484, 253)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_r8ksn")]
-
-[node name="MenuLVL" parent="CanvasLayer" instance=ExtResource("8_wrnc0")]
-visible = false
 
 [node name="Node2D" parent="." instance=ExtResource("4_yvw2e")]
 position = Vector2(288, 365)

@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://cousmr2gemxoc"]
+
+[ext_resource type="FontFile" uid="uid://brhjjbpjd2f8u" path="res://assets/fonts/GrapeSoda.ttf" id="1_gymsv"]
+[ext_resource type="Script" path="res://UI/die_menu.gd" id="1_rhsjs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16gf7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w04p3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuf4h"]
+bg_color = Color(1, 0.945098, 0.65098, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.811174, 0.814422, 0.177916, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsff2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82fqf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34ek6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn6gk"]
+bg_color = Color(0.972549, 0.784314, 0.862745, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.988383, 0.275707, 0.787163, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tbbj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbpq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7sbe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fcfm"]
+bg_color = Color(0.639216, 0.847059, 0.956863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.167028, 0.0905153, 0.457084, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[node name="DieMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rhsjs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_16gf7")
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_top = 122.0
+offset_right = 267.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_gymsv")
+theme_override_font_sizes/font_size = 50
+text = "Le silence règne à présent"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -128.5
+offset_right = 173.0
+offset_bottom = -77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gymsv")
+theme_override_font_sizes/font_size = 35
+text = "Votre score est de : 1024"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -22.0
+offset_right = 220.5
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w04p3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iuf4h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gsff2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_82fqf")
+text = "Recommencer"
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133196, 0.133196, 0.133196, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_34ek6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dn6gk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6tbbj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cbpq4")
+text = "Menu Principal"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w7sbe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fcfm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6tbbj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cbpq4")
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

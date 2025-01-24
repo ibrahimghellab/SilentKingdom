@@ -4,3 +4,5 @@
 
 [node name="healthPlus" type="Node"]
 script = ExtResource("1_xww2x")
+nom = "Vie +"
+desc = "Augmeente la vie du joueur de 20%"

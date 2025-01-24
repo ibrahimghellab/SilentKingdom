@@ -1,0 +1,144 @@
+[gd_scene load_steps=15 format=3 uid="uid://dibmqko84jt6b"]
+
+[ext_resource type="Script" path="res://UI/menu.gd" id="1_8evw8"]
+[ext_resource type="Texture2D" uid="uid://bshkm4vnuv5im" path="res://assets/background-menu.jpg" id="1_yoho4"]
+[ext_resource type="FontFile" uid="uid://brhjjbpjd2f8u" path="res://assets/fonts/GrapeSoda.ttf" id="2_k33w8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh71o"]
+texture = ExtResource("1_yoho4")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gapi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cldyc"]
+bg_color = Color(1, 0.945098, 0.65098, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.811174, 0.814422, 0.177916, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g53po"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akf0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd5fe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdukw"]
+bg_color = Color(0.639216, 0.847059, 0.956863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.167028, 0.0905153, 0.457084, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vibfl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37y4u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxc3b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isqbi"]
+bg_color = Color(0.972549, 0.784314, 0.862745, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.988383, 0.275707, 0.787163, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8evw8")
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(0.344076, 0.344076, 0.344076, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bh71o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -22.0
+offset_right = 220.5
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Jouer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gapi4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cldyc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g53po")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_akf0m")
+text = "Jouer"
+
+[node name="Paramètres" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pd5fe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xdukw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vibfl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_37y4u")
+text = "Paramètres"
+
+[node name="Quitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.133196, 0.133196, 0.133196, 0.352941)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jxc3b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isqbi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vibfl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_37y4u")
+text = "Quitter"
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -551.5
+offset_top = 23.0
+offset_right = 551.5
+offset_bottom = 300.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.0431373, 0, 0.588235, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_k33w8")
+theme_override_font_sizes/font_size = 120
+text = "Titre 
+du jeu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Paramètres" to="." method="_on_parametres_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quit_pressed"]

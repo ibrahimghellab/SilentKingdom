@@ -4,3 +4,5 @@
 
 [node name="heal" type="Node"]
 script = ExtResource("1_dv5ek")
+nom = "Régéneration"
+desc = "Régénère la moitié des points de vie maximale du joueur"

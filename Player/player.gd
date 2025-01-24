@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var projectile = load("res://bullet/bullet.tscn")
 @onready var camera = $Camera2D
+@onready var competence_helper = $competenceHelper
+@onready var menu_lvl: MenuCompetence = $CanvasLayer/MenuLVL
 
 
 var SPEED = 200.0
@@ -14,6 +16,7 @@ var bulletCooldown = 0.75
 var health: int = 100
 var max_health: int = 100
 var xp: int = 0
+var competence_tab = []
 var cap_xp = [25, 50, 100, 200, 500, 800,  1300, 2000, 3000, 5000, 7500, 10000]
 @export var damage: int = 5
 
@@ -51,9 +54,30 @@ func take_xp(value: int):
 
 func level_up():
 	Global.niveau += 1
+	competence_tab = competence_helper.get_three_competences()
+	menu_lvl.comp_1.text = competence_tab[0].desc
+	menu_lvl.comp_2.text = competence_tab[1].desc
+	menu_lvl.comp_3.text = competence_tab[2].desc
+	menu_lvl.nom1.text = competence_tab[0].nom
+	menu_lvl.nom2.text = competence_tab[1].nom
+	menu_lvl.nom3.text = competence_tab[2].nom
+	menuLVL()
+	get_parent().remove_all_enemies()
 	
 	
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("xp"):
 		area.set_player(self)
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("space"):
+		level_up()
+	
+func menuLVL():
+	if !menu_lvl.visible:
+		menu_lvl.show()
+		Engine.time_scale = 0
+	else:
+		menu_lvl.hide()
+		Engine.time_scale = 1
