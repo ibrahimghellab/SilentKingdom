@@ -17,9 +17,8 @@ func _process(delta):
 	attack_timer += delta
 
 func afflict_damage(body: Node):
-	if body.name == "player" and attack_timer > attack_cooldown:
-		var player: Player = body
-		player.take_damage(damage)
+	var player: Player = body
+	player.take_damage(damage)
 
 func death():
 	queue_free()

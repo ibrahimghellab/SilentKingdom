@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @onready var projectile = load("res://bullet/bullet.tscn")
+@onready var camera = $Camera2D
 
 
 var SPEED = 200.0
@@ -18,6 +19,7 @@ func _ready():
 	Global.player = self
 
 func _process(delta):
+	print(global_position)
 	$projectileHelper.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("click"):
 		shoot()

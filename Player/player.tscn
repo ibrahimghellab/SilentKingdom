@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfaxvpbkfqtgr"]
+[gd_scene load_steps=7 format=3 uid="uid://bfaxvpbkfqtgr"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nmtkm"]
 [ext_resource type="Script" path="res://State/State_machine.gd" id="2_et52c"]
 [ext_resource type="Script" path="res://State/IdleState.gd" id="3_odf7s"]
 [ext_resource type="Script" path="res://State/RunState.gd" id="4_k0vsq"]
+[ext_resource type="Script" path="res://Player/camera.gd" id="5_cq3kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrm8w"]
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+collision_mask = 9
 script = ExtResource("1_nmtkm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -40,4 +42,9 @@ player = NodePath("../..")
 position = Vector2(18.5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -1000
+limit_top = -100
+limit_right = 2175
+limit_bottom = 1425
 position_smoothing_enabled = true
+script = ExtResource("5_cq3kn")
