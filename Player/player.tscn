@@ -26,7 +26,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ryq35"]
 gradient = SubResource("Gradient_81rwl")
 fill = 1
-fill_from = Vector2(0.495726, 0.534188)
+fill_from = Vector2(0.517094, 0.508547)
+fill_to = Vector2(0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n11ck"]
 atlas = ExtResource("2_teinm")
@@ -505,6 +506,7 @@ script = ExtResource("1_nmtkm")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.7
 texture = SubResource("GradientTexture2D_ryq35")
+height = 1655.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k7fip")

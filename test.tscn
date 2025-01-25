@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://qrtpjftb5isp" path="res://ennemy/spaw.tscn" id="4_yvw2e"]
 [ext_resource type="PackedScene" uid="uid://uujb0uspboeu" path="res://ennemy/map.tscn" id="5_2wuky"]
 [ext_resource type="PackedScene" uid="uid://dwi8k02uusqgo" path="res://xp.tscn" id="6_djn4f"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://cmhitdvvf0uej" path="res://assets/Music/main_music_loop.wav" id="8_hi5rc"]
+=======
+>>>>>>> ac2b5832f4bf9b7aaa2e948f1dc608a3259735e5
 
 [sub_resource type="Animation" id="Animation_wdflu"]
 length = 0.001
