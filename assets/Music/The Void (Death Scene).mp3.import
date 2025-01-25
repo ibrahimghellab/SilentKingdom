@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://outujfqi08tq"
+path="res://.godot/imported/The Void (Death Scene).mp3-65dafc95991cc07e87fe6a42d36dfcdc.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/The Void (Death Scene).mp3"
+dest_files=["res://.godot/imported/The Void (Death Scene).mp3-65dafc95991cc07e87fe6a42d36dfcdc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

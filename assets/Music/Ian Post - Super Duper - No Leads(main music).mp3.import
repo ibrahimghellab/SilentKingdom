@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1lwaiplke0fq"
+path="res://.godot/imported/Ian Post - Super Duper - No Leads(main music).mp3-e45f87adad70a65c77c43376580d9b99.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/Ian Post - Super Duper - No Leads(main music).mp3"
+dest_files=["res://.godot/imported/Ian Post - Super Duper - No Leads(main music).mp3-e45f87adad70a65c77c43376580d9b99.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfaxvpbkfqtgr" path="res://Player/player.tscn" id="2_gmq62"]
 [ext_resource type="PackedScene" uid="uid://dnnbhb36s8a21" path="res://UI/player_ui.tscn" id="3_r8ksn"]
 [ext_resource type="PackedScene" uid="uid://qrtpjftb5isp" path="res://ennemy/spaw.tscn" id="4_yvw2e"]
-[ext_resource type="PackedScene" uid="uid://uujb0uspboeu" path="res://ennemy/map.tscn" id="5_2wuky"]
+[ext_resource type="PackedScene" uid="uid://bmrq171prccc7" path="res://ennemy/map.tscn" id="5_2wuky"]
 [ext_resource type="PackedScene" uid="uid://dwi8k02uusqgo" path="res://xp.tscn" id="6_djn4f"]
 
 [node name="Node2D" type="Node2D"]
