@@ -59,6 +59,9 @@ func take_xp(value: int):
 
 func level_up():
 	Global.niveau += 1
+	if Global.niveau <= 7:
+		$PointLight2D.texture.width *= 1.5
+		$PointLight2D.texture.height *= 1.5
 	get_parent().remove_all_enemies()
 	$AnimationPlayer.play("lvl_up")
 

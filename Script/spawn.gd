@@ -1,11 +1,14 @@
 extends Node2D
 
-const ENNEMY = preload("res://ennemy/ennemy.tscn")
+const ENNEMY2 = preload("res://ennemy/ennemy2.tscn")
+const ENNEMY1 = preload("res://ennemy/ennemy.tscn")
 @export var spawn_distance_min = 200  # Distance minimale de sécurité
 @export var spawn_distance_max = 200 
 @export var mobs_to_spawn = 1  # Nombre de mobs à générer
 var world_limits = Rect2(Vector2(10, 10), Vector2(1800, 920)) 
 @export var margin = 100
+@export var amount: int = 1
+@export var proba_ennemy_2 = 0
 
 func spawn_enemy():
 	var camera_rect = Rect2(
@@ -16,12 +19,28 @@ func spawn_enemy():
 	# Obtenir une position aléatoire en dehors de la caméra mais dans les limites du monde
 	var spawn_position = get_random_position_in_margin(camera_rect)
 	if spawn_position != Vector2.ZERO:
-		var enemy_instance = ENNEMY.instantiate()
+		var enemy_instance: Node
+		if randf() > proba_ennemy_2:
+			enemy_instance = ENNEMY1.instantiate()
+		else:
+			enemy_instance = ENNEMY2.instantiate()
 		enemy_instance.global_position = spawn_position
 		get_parent().add_child(enemy_instance)
 	else:
 		print("Impossible de trouver une position valide pour spawn l'ennemi.")
-	
+
+func _process(delta):
+	if Global.niveau > 10:
+		amount = 3
+		proba_ennemy_2 = 0.90
+	elif Global.niveau > 7:
+		proba_ennemy_2 = 0.50
+	elif Global.niveau > 5:
+		amount = 2
+	elif Global.niveau > 2:
+		$Timer.wait_time = 0.5
+	elif Global.niveau > 1:
+		proba_ennemy_2 = 0.10
 func get_random_position_in_margin(camera_rect: Rect2) -> Vector2:
 	var attempts = 0
 	while attempts < 10:  # Limiter les tentatives pour éviter une boucle infinie
@@ -46,7 +65,8 @@ func get_random_position_in_margin(camera_rect: Rect2) -> Vector2:
 	return Vector2.ZERO
 
 func _on_timer_timeout():
-	spawn_enemy()
+	for i in range(amount):
+		spawn_enemy()
 #
 #const ENNEMY = preload("res://ennemy/ennemy.tscn")
 #@export var spawn_distance_min = 200  # Distance minimale de sécurité
