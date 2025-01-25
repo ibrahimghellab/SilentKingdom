@@ -10,3 +10,7 @@ func remove_all_enemies():
 	for child in get_children():
 		if child is Ennemy:
 			child.queue_free()  
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

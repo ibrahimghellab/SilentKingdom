@@ -34,6 +34,8 @@ func _process(delta):
 			shoot()
 		
 func shoot():
+	$shooting.pitch_scale = 0.8 + randf() * (1.5 - 0.8)
+	$shooting.play()
 	var instance = projectile.instantiate()
 	instance.dir = $projectileHelper.rotation + deg_to_rad(90)
 	instance.spawnPos = $projectileHelper/projectileSpawn.global_position
@@ -45,6 +47,7 @@ func shoot():
 func take_damage(value: int):
 	health = clamp(health - value, 0, max_health)
 	if health == 0:
+		$die.play()
 		$AnimationPlayer.play("death")
 
 func death():
@@ -59,6 +62,7 @@ func take_xp(value: int):
 
 func level_up():
 	Global.niveau += 1
+	$Level_up.play()
 	get_parent().remove_all_enemies()
 	$AnimationPlayer.play("lvl_up")
 
