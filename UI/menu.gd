@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
+	$AudioStreamPlayer2D.stop()
 	get_tree().change_scene_to_file("res://test.tscn")
 
 
