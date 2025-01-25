@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfaxvpbkfqtgr"]
+[gd_scene load_steps=15 format=3 uid="uid://bfaxvpbkfqtgr"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nmtkm"]
 [ext_resource type="Script" path="res://State/State_machine.gd" id="2_et52c"]
@@ -15,6 +15,15 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xe64t"]
 radius = 26.5754
+
+[sub_resource type="Gradient" id="Gradient_opray"]
+offsets = PackedFloat32Array(0, 0.654378)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cjy1t"]
+gradient = SubResource("Gradient_opray")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -78,5 +87,10 @@ script = ExtResource("6_0434r")
 
 [node name="MenuLVL" parent="CanvasLayer" instance=ExtResource("10_l1wek")]
 visible = false
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.57586, 0.408179, 0.809783, 1)
+texture = SubResource("GradientTexture2D_cjy1t")
+texture_scale = 1.55
 
 [connection signal="area_entered" from="xp_atract" to="." method="_on_area_2d_area_entered"]
