@@ -27,5 +27,6 @@ func _on_area_2d_body_entered(body):
 	if body.name == "player":
 		afflict_damage(body)
 	elif body.is_in_group("bullet"):
+		
 		take_damage(body.damage)
 		body.queue_free()

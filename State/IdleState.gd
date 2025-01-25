@@ -4,7 +4,7 @@ extends State
 @export var animation_sprite : AnimatedSprite2D
 
 func enter():
-	pass
+	animation_sprite.play("Idle_front")
 
 func exit():
 	pass
