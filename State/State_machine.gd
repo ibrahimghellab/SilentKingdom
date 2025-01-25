@@ -23,7 +23,7 @@ func _process(delta):
 		current_state.update(delta)
 
 func _physics_process(delta):
-	if current_state:
+	if current_state and !Global.player.is_in_anime:
 		current_state.physics_update(delta)
 		current_state.next_transition()
 

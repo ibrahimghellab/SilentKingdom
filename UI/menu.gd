@@ -1,5 +1,6 @@
 extends Control
 
+@onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://test.tscn")
+	animation_player.play("fade_out")
 
 
 func _on_parametres_pressed() -> void:
@@ -21,3 +22,7 @@ func _on_parametres_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_animation_player_current_animation_changed(name):
+	get_tree().change_scene_to_file("res://test.tscn")
