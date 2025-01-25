@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://uujb0uspboeu"]
+[gd_scene load_steps=6 format=4 uid="uid://bmrq171prccc7"]
 
 [ext_resource type="Texture2D" uid="uid://dhicd1fo0rfik" path="res://assets/tileset/Dungeon tileset/Dungeon tileset.png" id="1_ftrgb"]
 
@@ -458,3 +458,6 @@ tile_set = SubResource("TileSet_bmnui")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_32qav")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.550275, 0.479938, 0.582489, 1)
