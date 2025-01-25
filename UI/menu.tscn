@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dibmqko84jt6b"]
+[gd_scene load_steps=16 format=3 uid="uid://dibmqko84jt6b"]
 
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_8evw8"]
 [ext_resource type="Texture2D" uid="uid://bshkm4vnuv5im" path="res://assets/background-menu.jpg" id="1_yoho4"]
 [ext_resource type="FontFile" uid="uid://brhjjbpjd2f8u" path="res://assets/fonts/GrapeSoda.ttf" id="2_k33w8"]
+[ext_resource type="AudioStream" uid="uid://i244tu3x0tcw" path="res://assets/Music/Kashido-Minuet-in-G-Major-_Menu-LOL_.wav" id="4_8eucp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh71o"]
 texture = ExtResource("1_yoho4")
@@ -138,6 +139,10 @@ text = "Titre
 du jeu"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8eucp")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Paramètres" to="." method="_on_parametres_pressed"]
