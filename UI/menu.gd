@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	animation_player.play("fade_out")
+	get_tree().change_scene_to_file("res://test.tscn")
 
 
 func _on_parametres_pressed() -> void:
@@ -22,7 +22,4 @@ func _on_parametres_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_animation_player_current_animation_changed(name):
-	get_tree().change_scene_to_file("res://test.tscn")
+	

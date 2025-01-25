@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=63 format=3 uid="uid://bfaxvpbkfqtgr"]
-=======
-[gd_scene load_steps=15 format=3 uid="uid://bfaxvpbkfqtgr"]
->>>>>>> f67ca30b2e8b00a8f581e4e9fb9b7804bca28e18
+[gd_scene load_steps=65 format=3 uid="uid://bfaxvpbkfqtgr"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_nmtkm"]
 [ext_resource type="Script" path="res://State/State_machine.gd" id="2_et52c"]
@@ -19,6 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://b47redw2pwxb5" path="res://competence/health_plus.tscn" id="8_ctvq5"]
 [ext_resource type="PackedScene" uid="uid://doyvg8jpen5k2" path="res://competence/heal.tscn" id="9_112gy"]
 [ext_resource type="PackedScene" uid="uid://cb8eeiiy6kn24" path="res://menu_lvl.tscn" id="10_l1wek"]
+
+[sub_resource type="Gradient" id="Gradient_81rwl"]
+offsets = PackedFloat32Array(0, 0.723502)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ryq35"]
+gradient = SubResource("Gradient_81rwl")
+fill = 1
+fill_from = Vector2(0.495726, 0.534188)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n11ck"]
 atlas = ExtResource("2_teinm")
@@ -334,7 +339,6 @@ radius = 9.51315
 [sub_resource type="CircleShape2D" id="CircleShape2D_xe64t"]
 radius = 26.5754
 
-<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_atews"]
 resource_name = "death"
 length = 1.3
@@ -489,21 +493,15 @@ _data = {
 "death": SubResource("Animation_atews"),
 "lvl_up": SubResource("Animation_pr22l")
 }
-=======
-[sub_resource type="Gradient" id="Gradient_opray"]
-offsets = PackedFloat32Array(0, 0.654378)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cjy1t"]
-gradient = SubResource("Gradient_opray")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
->>>>>>> f67ca30b2e8b00a8f581e4e9fb9b7804bca28e18
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_mask = 9
 script = ExtResource("1_nmtkm")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.7
+texture = SubResource("GradientTexture2D_ryq35")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k7fip")
@@ -544,6 +542,7 @@ debug_color = Color(0.953543, 0.207276, 0.163702, 0.42)
 position = Vector2(18.5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 0.5)
 limit_left = 0
 limit_top = 0
 limit_right = 2175
@@ -565,16 +564,9 @@ script = ExtResource("6_0434r")
 [node name="MenuLVL" parent="CanvasLayer" instance=ExtResource("10_l1wek")]
 visible = false
 
-<<<<<<< HEAD
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vvut0")
 }
-=======
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.57586, 0.408179, 0.809783, 1)
-texture = SubResource("GradientTexture2D_cjy1t")
-texture_scale = 1.55
->>>>>>> f67ca30b2e8b00a8f581e4e9fb9b7804bca28e18
 
 [connection signal="area_entered" from="xp_atract" to="." method="_on_area_2d_area_entered"]
